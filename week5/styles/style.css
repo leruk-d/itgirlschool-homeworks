@@ -1,0 +1,140 @@
+.menu,
+h1,
+h5,
+p {
+    font-family: 'Roboto', sans-serif
+}
+
+.flexcontainer {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    Width: 1194px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.menu:hover {
+    color: turquoise;
+}
+
+.menu:nth-child(8) {
+    background: #6F2CFF;
+
+    border-radius: 20px;
+}
+
+.menu:nth-of-type(8) {
+    color: white;
+}
+
+
+#text {
+    position: relative;
+    top: 110px;
+}
+
+div {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+
+h1 {
+    position: relative;
+    left: 115px;
+
+
+    color: #6F2DFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 61px;
+    /* identical to box height, or 113% */
+}
+
+h5 {
+
+    top: 35px;
+    font-size: 18px;
+
+}
+
+h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+p {
+    position: relative;
+    height: 120px;
+    left: 115px;
+    right: 12.4%;
+    top: 2.5px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+#field {
+    position: relative;
+    height: 45px;
+    width: 268px;
+    left: 115px;
+
+
+    background: #FFFFFF;
+    border: 1px solid #6F2CFF;
+    box-sizing: border-box;
+    border-radius: 27.5px 0px 0px 27.5px;
+}
+
+
+
+#button {
+    position: relative;
+    height: 45px;
+    width: 178px;
+    left: 110px;
+    background: #6F2CFF;
+    color: white;
+    border-radius: 0px 27.5px 27.5px 0px;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.logo1 {
+    display: flex;
+}
+
+#customers {
+    display: flex;
+    justify-content: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+}
