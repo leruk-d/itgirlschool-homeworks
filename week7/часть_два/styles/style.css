@@ -1,0 +1,152 @@
+.container {
+    background-image: url('../image/жилой комплекс.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 1fr 15%;
+    gap: 10px;
+    justify-items: center;
+}
+
+.header {
+    grid-row: 1 / 2;
+    justify-self: stretch;
+    align-self: center;
+}
+
+.main {
+    grid-row: 2 / 3;
+    justify-self: stretch;
+}
+
+.footer {
+    grid-row: 3 / 4;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 50% 1fr 1fr 1fr;
+    grid-template-areas: "text1 text1 text1"
+        "mouse mouse mouse"
+        "data data data"
+        "img img img";
+    justify-items: center;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(4 1fr);
+    align-content: center;
+    justify-self: stretch;
+    background-color: #2d343c;
+}
+
+#logo1 {
+    max-width: 35%;
+}
+
+.menu {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+#text1 {
+    grid-area: text1;
+    text-align: center;
+    justify-self: center;
+    align-self: end;
+}
+
+#mouse {
+    grid-area: mouse;
+    justify-self: center;
+    align-self: start;
+    width: 4%;
+}
+
+.data {
+    grid-area: data;
+    justify-self: stretch;
+    align-self: start;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.3fr 2fr;
+    gap: 10px;
+}
+
+#img1 {
+    grid-column: 1/2;
+    justify-self: end;
+
+}
+
+#address {
+    grid-column: 2/3;
+    align-self: start
+}
+
+#img2 {
+    grid-column: 3/4;
+    justify-self: end;
+
+}
+
+#number {
+    grid-column: 4/5;
+    justify-self: start;
+}
+
+#image {
+    grid-area: img;
+    width: 70%;
+}
+
+#logo2 {
+    grid-column: 1/2;
+    grid-row: 1/5;
+    width: 20%;
+    justify-self: center;
+}
+
+.contacts {
+    grid-column: 2/3;
+    display: flex;
+}
+
+.menu {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.main {
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-size: 2vw;
+}
+
+.footer {
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-size: 1vw;
+}
+
+p {
+    color: #D4C17F;
+    font-family: 'Playfair Display', serif;
+    font-size: 5vw;
+}
