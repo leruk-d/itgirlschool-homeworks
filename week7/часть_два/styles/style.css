@@ -2,7 +2,6 @@
     background-image: url('../image/жилой комплекс.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
     display: grid;
     grid-template-rows: 10% 1fr 15%;
     gap: 10px;
@@ -32,6 +31,7 @@
 }
 
 .main {
+    min-height: 75vh;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 50% 1fr 1fr 1fr;
