@@ -34,10 +34,9 @@
       font-family: 'Roboto Slab';
       font-size: medium;
     }
-
-    nav{
+    .navbar__nav-link{
       color:  #5222d0;
-    }
+  }
   </style>
 </head>
 
@@ -45,7 +44,7 @@
   <div class="container">
     <nav class="navbar navbar-light mt-3 m-2 ">
       <div class="container-fluid">
-        <img class="navbar__img" src="images/logo.png" alt="logo">
+        <img class="navbar__logo" src="images/logo.png" alt="logo">
         <button class="navbar__button btn btn-light rounded-pill">КОРЗИНА</button>
         </form>
       </div>
@@ -61,12 +60,13 @@
           </div>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light mt-5 p-4 ">
-          <div class="navbar-nav">
-            <a class="navbar__nav-item nav-link" href="#">Возможности</a>
-            <a class="navbar__nav-item nav-link" href="#">Где купить</a>
-            <a class="navbar__nav-item nav-link" href="#">Доставка</a>
-            <a class="navbar__nav-item nav-link" href="#">Помощь</a>
+        <nav class="navbar-nav navbar-expand-lg navbar-light mt-5 p-4 ">
+          <div class="navbar-nav-wrapper"></div>
+            <a class="navbar__nav-link p-2" href="#">Возможности</a>
+            <a class="navbar__nav-link p-2" href="#">Где купить</a>
+            <a class="navbar__nav-link p-2" href="#">Доставка</a>
+            <a class="navbar__nav-link p-2" href="#">Помощь</a>
+      
         </nav>
       </div>
       <div class="col-7">
