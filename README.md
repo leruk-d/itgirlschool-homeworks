@@ -1,2 +1,2 @@
-# itgirlscool-homeworks
+# itgirlschool-homeworks
 Домашние задания для ItGirlSchool
