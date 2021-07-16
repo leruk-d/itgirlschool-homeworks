@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onClick="showMessage();"> Нажми меня</button>
+    <br>
+    <button onClick="calcSum();"> сложение</button>
+    <button onClick="calcSub();"> вычитание</button>
+    <button onClick="calcMult();"> умножение</button>
+    <button onClick="calcDiv();"> деление</button>
+    <script>
+        function showMessage() {
+            let name = prompt('Как Вас зовут?');
+            alert(`Привет, ${name}!`);
+        }
+
+        function calcSum() {
+            let a = prompt('');
+            let b = prompt('');
+
+            alert(+a + +b);
+        }
+
+        function calcSub() {
+            let a = prompt("Первое число?", );
+            let b = prompt("Второе число?", );
+
+            alert(+a - +b);
+
+        }
+
+        function calcMult() {
+            let a = prompt("Первое число?", );
+            let b = prompt("Второе число?", );
+
+            alert(+a * +b);
+        }
+
+        function calcDiv() {
+            let a = prompt("Первое число?", );
+            let b = prompt("Второе число?", );
+
+            alert(+a / +b);
+        }
+    </script>
+</body>
+
+</html>
