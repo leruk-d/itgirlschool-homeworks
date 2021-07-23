@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    первое число
+    <input type="text" id="num1" />
+    второе число
+    <input type="text" id="num2" />
+    <br>
+    <input type="button" id=result_sum value="Сумма" onclick="calcSum()">
+    <input type="button" id=result_sub value="Вычитание" onclick="calcSub()">
+    <input type="button" id=result_sub value="Умножение" onclick="calcMult()">
+    <input type="button" id=result_sub value="Деление" onclick="calcDiv()">
+    <div id="result" onclick="clickMe()">Ответ</div>
+
+    <h2>Галерея</h2>
+    <div class="galery">
+        <button class="btn1" onClick="clickPic1()">Назад</button>
+        <img id=image
+            src="https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/156/586/image/base_87716f252d.jpg"
+            onClick="clickPic()">
+        <button class="btn2" onClick="clickPic()">Вперед</button>
+    </div>
+</body>
+
+</html>
