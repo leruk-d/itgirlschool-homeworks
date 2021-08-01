@@ -23,18 +23,33 @@
 //     }
 // }
 
-let choiceColor = document.getElementById("color");
+// let choiceColor = document.getElementById("color");
 
-function changeBG() {
-    switch (choiceColor.value) {
-        case 'white': 
-            document.body.style.backgroundColor = "#FFFFFF";
-        break;
-        case 'dark':  
-            document.body.style.backgroundColor = "#808080"; 
-        break;
-        case 'blue': 
-            document.body.style.backgroundColor = "#0000ff"; 
-        break;
+// function changeBG() {
+//     switch (choiceColor.value) {
+//         case 'white': 
+//             document.body.style.backgroundColor = "#FFFFFF";
+//         break;
+//         case 'dark':  
+//             document.body.style.backgroundColor = "#808080"; 
+//         break;
+//         case 'blue': 
+//             document.body.style.backgroundColor = "#0000ff"; 
+//         break;
+//     }
+// }
+
+document.getElementById("color").addEventListener("change", (e) => {
+    let choiceColor = e.currentTarget.value;
+    switch (choiceColor) {
+      case 'white':
+        document.body.style.backgroundColor = "#FFFFFF";
+      break;
+      case 'dark':
+        document.body.style.backgroundColor = "#808080";
+      break;
+      case 'blue':
+        document.body.style.backgroundColor = "#0000ff";
+      break;
     }
-}
+  });
