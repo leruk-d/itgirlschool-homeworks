@@ -1,5 +1,6 @@
+
 function check(){
-    let user = document.getElementById("username ");
+    let user = document.getElementById("username");
     let password = document.getElementById("password");
     let password2 = document.getElementById("password_again");
     let email = document.getElementById("email");
@@ -10,7 +11,7 @@ form.isValid = true;
 
     document.getElementById('errorMessage').innerHTML= "";
     
-    if (user.value ==''){ 
+    if (user.value ==''){  
     document.getElementById('errorMessage').innerHTML+= "Ваше имя не заполнено<br>";
     form.isValid = false;
     }
@@ -39,8 +40,9 @@ form.isValid = true;
         form.isValid = false;
     } 
     
-}
     if (form.isValid == true) {
         let userName=user.value;
         alert(`Добро пожаловать, ${userName}!`)
     }
+}
+check();
