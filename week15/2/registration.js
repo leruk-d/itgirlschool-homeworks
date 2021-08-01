@@ -45,4 +45,3 @@ form.isValid = true;
         alert(`Добро пожаловать, ${userName}!`)
     }
 }
-check();
