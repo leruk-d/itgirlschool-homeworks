@@ -131,19 +131,19 @@ carBrandSelect.addEventListener("change", (e) => {
 
   const carModelSelect = document.querySelector(".car-model");
   carModelSelect .addEventListener("change", (e) => {
-  const currentSelection1 = e.currentTarget.value;
+  const currentSelection = e.currentTarget.value;
 
-  const carYearData = getCarYearlDataByModel(currentSelection1);
-  const  carYearsNames = carYearData.map(carYear => carYear[1][0]);
+  const carYearsData = getCarModelDataByBrand(currentSelection);
+  const  carYearsNames = carYearsData.map(carData => carData[1][0]);
 
   const yearsSelect = document.querySelector(".car-year");
   yearsSelect.innerHTML = "";
-
+  
   carYearsNames.forEach(year => {
-    const newOption = document.createElement("option");
-    newOption.value = year;
-    newOption.innerText = year;
-    yearsSelect.appendChild(newOption);
+    const option = document.createElement("option");
+    option.value = year;
+  option.innerText = year;
+  yearsSelect.appendChild(option);
   });
   modelsSelect.disabled = false;
 });
@@ -152,12 +152,10 @@ carBrandSelect.addEventListener("change", (e) => {
 document.getElementById("calcCar").addEventListener("click", () => {
   const carBrand = document.querySelector(".car-brand").value;
   const carModel = document.querySelector(".car-model").value;
-  const carYear = document.querySelector(".car-year").value;
-
 
   const carModelData = getCarModelDataByBrand(carBrand);
-  const chosenCarModelData = carModelData(carModel);
-  document.getElementById("price").innerHTML = chosenCarModelData[1][1];
+  const chosenCarModelData = carModelData.find(carData => carData[0] === carModel);
+  document.getElementById("price").innerHTML = chosenCarModelData[1][0][1];
 
 })
 
@@ -170,11 +168,11 @@ function getCarModelDataByBrand(brand) {
   return carModelData;
 }
 
-function getCarYearlDataByModel(brand) {
-  let carYearData = [];
-  if (brand === "audi") carYearData = AUDI_MODELS; 
-  else if (brand === "honda") carYearData = HONDA_MODELS;
-  else if (brand === "mercedes") carYearData = MERCEDES_MODELS;
-  else if (brand === "bmw") carYearData = BMW_MODELS;
-  return carYearData;
-}
+// function getCarYearByModel(brand) {
+//   let carYearData = [];
+//   if (brand === "audi") carYearData = AUDI_MODELS; 
+//   else if (brand === "honda") carYearData = HONDA_MODELS;
+//   else if (brand === "mercedes") carYearData = MERCEDES_MODELS;
+//   else if (brand === "bmw") carYearData = BMW_MODELS;
+//   return carYearData;
+// }
