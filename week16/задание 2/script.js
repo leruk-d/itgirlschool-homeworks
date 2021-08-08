@@ -134,16 +134,22 @@ carBrandSelect.addEventListener("change", (e) => {
 
   carModelSelect .addEventListener("change", (e) => {
   const currentSelection = e.currentTarget.value;
+  console.log(currentSelection);
 
-  const carModelsData = getCarModelDataByBrand(currentSelection);
-  
-  const chosenModel = carModelsData.find(carData => carData[0] === carModel);
-  const carYearsNames = chosenModel.map(carData => carData[1][0]);
+  const carBrand = document.querySelector(".car-brand").value;
+  const carModelsData = getCarModelDataByBrand(carBrand);
+  console.log(carModelsData);
+  console.log(carBrand);
+
+  const selectedModelData = carModelsData.find(model => model[0] === currentSelection);
+  console.log(selectedModelData);
+  const pricePerYears = selectedModelData[1];
+  const years = pricePerYears.map(data => data[0]);
 
   const yearsSelect = document.querySelector(".car-year");
   yearsSelect.innerHTML = "";
   
-  carYearsNames.forEach(year => {
+  years.forEach(year => {
     const option = document.createElement("option");
     option.value = year;
   option.innerText = year;
@@ -152,14 +158,24 @@ carBrandSelect.addEventListener("change", (e) => {
   yearsSelect.disabled = false;
 });
 
-
 document.getElementById("calcCar").addEventListener("click", () => {
   const carBrand = document.querySelector(".car-brand").value;
   const carModel = document.querySelector(".car-model").value;
+  const carYear = document.querySelector(".car-year").value;
 
   const carModelData = getCarModelDataByBrand(carBrand);
+  
   const chosenCarModelData = carModelData.find(carData => carData[0] === carModel);
-  document.getElementById("price").innerHTML = chosenCarModelData[1][0][1];
+  console.log(chosenCarModelData );
+
+  const pricePerYears = chosenCarModelData[1];
+  console.log(pricePerYears );
+
+  // const chosenCarYear = pricePerYears.find(data => data[0] === carYear);
+  const priceYears = pricePerYears[1];
+  console.log(priceYears);
+  
+  document.getElementById("price").innerHTML =  priceYears[0];
 
 })
 
