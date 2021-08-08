@@ -132,14 +132,14 @@ carBrandSelect.addEventListener("change", (e) => {
 
   const modelsSelect = document.querySelector(".car-model");
 modelsSelect.addEventListener("change", (e) => {
-  const currentSelection = e.currentTarget.value;
+  const currentSelection1 = e.currentTarget.value;
 
-  const carModelsData = getCarModelDataByBrand(currentSelection);
-  const  carModelsNamesYears = carModelsData.map(carYear => carYear[1][0]);
+  const carModelsDataYear = getCarModelDataByBrand(currentSelection1);
+  const  carModelsNamesYears = carModelsDataYear.map(carYear => carYear[1][0]);
 
   const yearsSelect = document.querySelector(".car-year");
   yearsSelect.innerHTML = "";
-  
+
   carModelsNamesYears.forEach(name => {
     const newOption = document.createElement("option");
     newOption.value = name;
@@ -158,13 +158,13 @@ document.getElementById("calcCar").addEventListener("click", () => {
 
   const carModelData = getCarModelDataByBrand(carBrand);
   const chosenCarModelData = carModelData(carModel);
-  document.getElementById("price").innerHTML = chosenCarModelData[1];
+  document.getElementById("price").innerHTML = chosenCarModelData[1][1];
 
 })
 
 function getCarModelDataByBrand(brand) {
   let carModelData = [];
-  if (brand === "audi") carModelData = AUDI_MODELS;
+  if (brand === "audi") carModelData = AUDI_MODELS; 
   else if (brand === "honda") carModelData = HONDA_MODELS;
   else if (brand === "mercedes") carModelData = MERCEDES_MODELS;
   else if (brand === "bmw") carModelData = BMW_MODELS;
