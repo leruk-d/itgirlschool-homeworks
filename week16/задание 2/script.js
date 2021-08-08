@@ -171,11 +171,12 @@ document.getElementById("calcCar").addEventListener("click", () => {
   const pricePerYears = chosenCarModelData[1];
   console.log(pricePerYears );
 
-  // const chosenCarYear = pricePerYears.find(data => data[0] === carYear);
-  const priceYears = pricePerYears[1];
-  console.log(priceYears);
+  const chosenCarYear = pricePerYears.find(data => data[0] === Number(carYear));
+  // const priceYears = pricePerYears.find(data => data[0] === carYear);
+  // const priceYears = pricePerYears[1];
+  // console.log(priceYears);
   
-  document.getElementById("price").innerHTML =  priceYears[0];
+  document.getElementById("price").innerHTML = chosenCarYear[1];
 
 })
 
