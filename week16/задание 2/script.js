@@ -113,14 +113,12 @@ carBrandSelect.addEventListener("change", (e) => {
   const doesBrandExist = CAR_BRANDS.some(brand => brand === currentSelection);
   if (!doesBrandExist) return;
 
-
-
   const carModelsData = getCarModelDataByBrand(currentSelection);
   const carModelsNames = carModelsData.map(carData => carData[0]);
-  
 
   const modelsSelect = document.querySelector(".car-model");
   modelsSelect.innerHTML = "";
+
   carModelsNames.forEach(model => {
     const newOption = document.createElement("option");
     newOption.value = model;
@@ -130,20 +128,21 @@ carBrandSelect.addEventListener("change", (e) => {
   modelsSelect.disabled = false;
 });
 
-  const modelsSelect = document.querySelector(".car-model");
-modelsSelect.addEventListener("change", (e) => {
+
+  const carModelSelect = document.querySelector(".car-model");
+  carModelSelect .addEventListener("change", (e) => {
   const currentSelection1 = e.currentTarget.value;
 
-  const carModelsDataYear = getCarModelDataByBrand(currentSelection1);
-  const  carModelsNamesYears = carModelsDataYear.map(carYear => carYear[1][0]);
+  const carYearData = getCarYearlDataByModel(currentSelection1);
+  const  carYearsNames = carYearData.map(carYear => carYear[1][0]);
 
   const yearsSelect = document.querySelector(".car-year");
   yearsSelect.innerHTML = "";
 
-  carModelsNamesYears.forEach(name => {
+  carYearsNames.forEach(year => {
     const newOption = document.createElement("option");
-    newOption.value = name;
-    newOption.innerText = name;
+    newOption.value = year;
+    newOption.innerText = year;
     yearsSelect.appendChild(newOption);
   });
   modelsSelect.disabled = false;
@@ -169,4 +168,13 @@ function getCarModelDataByBrand(brand) {
   else if (brand === "mercedes") carModelData = MERCEDES_MODELS;
   else if (brand === "bmw") carModelData = BMW_MODELS;
   return carModelData;
+}
+
+function getCarYearlDataByModel(brand) {
+  let carYearData = [];
+  if (brand === "audi") carYearData = AUDI_MODELS; 
+  else if (brand === "honda") carYearData = HONDA_MODELS;
+  else if (brand === "mercedes") carYearData = MERCEDES_MODELS;
+  else if (brand === "bmw") carYearData = BMW_MODELS;
+  return carYearData;
 }
