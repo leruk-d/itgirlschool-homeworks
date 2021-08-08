@@ -108,6 +108,7 @@ const EQUIPMENT_LEVEL = ["базовый", "средний", "максималь
 
 
 const carBrandSelect = document.querySelector(".car-brand");
+
 carBrandSelect.addEventListener("change", (e) => {
   const currentSelection = e.currentTarget.value;
   const doesBrandExist = CAR_BRANDS.some(brand => brand === currentSelection);
@@ -130,11 +131,14 @@ carBrandSelect.addEventListener("change", (e) => {
 
 
   const carModelSelect = document.querySelector(".car-model");
+
   carModelSelect .addEventListener("change", (e) => {
   const currentSelection = e.currentTarget.value;
 
-  const carYearsData = getCarModelDataByBrand(currentSelection);
-  const  carYearsNames = carYearsData.map(carData => carData[1][0]);
+  const carModelsData = getCarModelDataByBrand(currentSelection);
+  
+  const chosenModel = carModelsData.find(carData => carData[0] === carModel);
+  const carYearsNames = chosenModel.map(carData => carData[1][0]);
 
   const yearsSelect = document.querySelector(".car-year");
   yearsSelect.innerHTML = "";
@@ -145,7 +149,7 @@ carBrandSelect.addEventListener("change", (e) => {
   option.innerText = year;
   yearsSelect.appendChild(option);
   });
-  modelsSelect.disabled = false;
+  yearsSelect.disabled = false;
 });
 
 
