@@ -172,10 +172,7 @@ document.getElementById("calcCar").addEventListener("click", () => {
   console.log(pricePerYears );
 
   const chosenCarYear = pricePerYears.find(data => data[0] === Number(carYear));
-  // const priceYears = pricePerYears.find(data => data[0] === carYear);
-  // const priceYears = pricePerYears[1];
-  // console.log(priceYears);
-  
+
   document.getElementById("price").innerHTML = chosenCarYear[1];
 
 })
@@ -188,12 +185,3 @@ function getCarModelDataByBrand(brand) {
   else if (brand === "bmw") carModelData = BMW_MODELS;
   return carModelData;
 }
-
-// function getCarYearByModel(brand) {
-//   let carYearData = [];
-//   if (brand === "audi") carYearData = AUDI_MODELS; 
-//   else if (brand === "honda") carYearData = HONDA_MODELS;
-//   else if (brand === "mercedes") carYearData = MERCEDES_MODELS;
-//   else if (brand === "bmw") carYearData = BMW_MODELS;
-//   return carYearData;
-// }
