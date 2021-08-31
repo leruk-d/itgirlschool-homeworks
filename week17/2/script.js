@@ -1,7 +1,7 @@
 let addInputBtn = document.getElementById("btn");
 let talkContainer = document.querySelector(".talk-container");
 let comment = document.getElementById("comments");
-let words = ['XXX', 'viagra']
+
 
 function checkSpam(comments) {
     return `<div>${comments}</div> <hr>`;
