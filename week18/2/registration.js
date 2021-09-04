@@ -88,6 +88,8 @@ function checkAll(){
         document.getElementById('errorMessage').innerHTML=errors.join('.<br>');
       
     }
+// Неверный формат заполнения во всех инпутах, не понимаю почему?!
+
 
 
 
