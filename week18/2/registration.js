@@ -56,6 +56,7 @@
 
 let errors = [];
 console.log(errors );
+
 function checkValidity(input){
     let validity = input.validity;
     if (validity.valueMissing) {
@@ -79,9 +80,8 @@ function checkValidity(input){
 function checkAll(){
    
         errors=[];
-        console.log(errors);
+
         let inputs=document.querySelectorAll("input");
-    
         for(let input of inputs){
             checkValidity(input);
         }
