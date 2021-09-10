@@ -43,20 +43,21 @@ let password=passwordField.value;
 console.log(password)
 
 function ValidateLogin(loginField) {
-    let mailFormat = /^[a-z0-9_-]{3,16}$/i;
+    let loginFormat = /^[a-z0-9_-]{3,16}$/i;
    
-  if (loginField.value.match(mailFormat)) 
+  if (loginField.value.match(loginFormat)) 
      {
-         email.style.border = '1px solid green';
+        login.style.border = '1px solid green';
          return true;
      } else {
          errors.push("Ваш адрес электронной почты введен неверно!");
-         email.style.border = '1px solid red';
+         login.style.border = '1px solid red';
          return false;
      }
  }
- let email=emailField.value;
- console.log(email)
+ let login=loginField.value;
+ console.log(login)
+
 function ValidateEmail(emailField) {
    let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
   
@@ -70,7 +71,7 @@ function ValidateEmail(emailField) {
         return false;
     }
 }
-let email1=emailField.value;
+let email=emailField.value;
 console.log(email)
 
 function ValidateTel(telField) {
@@ -107,8 +108,10 @@ function checkAll(){
         errors=[];
         console.log(errors );
 
+       
         ValidateUsername(nameField)
         ValidateTel(telField)
+        ValidateLogin(loginField)
     ValidatePassword(passwordField)
     ValidateEmail(emailField)
     
