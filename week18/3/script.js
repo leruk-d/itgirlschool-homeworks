@@ -19,7 +19,8 @@ function sendMessage(author,comments) {
     if (!commentInput.value) return;
     let str = commentInput.value.replace(/(viagra|виагра|xxx)/gi, '***');
 
-  document.getElementById("chat").innerHTML+=`<span class='author'>${author}:</span>${str}<br>`;
+    let input = event.target;
+    document.getElementById("chat").innerHTML+=`<span class='author'>${author}:</span>${str}<br>`;
 
 }
 
@@ -34,4 +35,17 @@ if(localStorage.getItem('name')==null){
 
 sendMessage(author,comments) 
 }
-//надо загрузить аватар и
+
+//надо загрузить аватар 
+let openFile = function(event) {
+    let input = event.target;
+
+    let reader = new FileReader();
+    reader.onload = function(){
+      let dataURL = reader.result;
+      let output = document.getElementById('output');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+
+  };

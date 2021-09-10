@@ -20,9 +20,8 @@
 
         <div>
             <label for="file"></label>
-            <input name="avatar" id="file" type="file" accept="image/*">
-            <div class="avatar"></div>
-        </div>
+            <input type='file' id="ava" class="ava" accept='image/*' onchange='openFile(event)'>
+            <img id='output' width="100" height="100">
 
 <div>
         <label for="comments"></label>
