@@ -1,10 +1,3 @@
-function isNumValid(num1) {
-    return !Number.isNaN(Number(num1));
-}
-
-let num1 = document.getElementById('num1');
-let num2 = document.getElementById('num2');
-
 class Сalculator {
     static sum(num1, num2) {
         return +num1 + +num2;
@@ -20,43 +13,44 @@ class Сalculator {
     };
 }
 
-let sum=Сalculator.sum(num1, num2);
-let multi=Сalculator.multi(num1, num2) ;
-let sub=Сalculator.sub(num1, num2);
-let div=Сalculator.div(num1, num2);
-// function enterNumber() {
-    // let num1 = document.getElementById('num1').value;
-    // let num2 = document.getElementById('num2').value;
-//     return [num1, num2];
-// }
+function isNumValid(num1) {
+    return !Number.isNaN(Number(num1));
+}
+
+function enterNumber() {
+    let num1 = document.getElementById('num1').value;
+    let num2 = document.getElementById('num2').value;
+    return [num1, num2];
+}
 
 function calcSum() {
-    // let [num1, num2] = enterNumber();
+    let [num1, num2] = enterNumber();
 
     if (isNumValid(num1) && isNumValid(num2)) {
-        document.getElementById('result').innerHTML = sum;
+        let result = Сalculator.sum(num1, num2);
+        document.getElementById('result').innerHTML = result;
     } else {
         alert("Only numbers");
     }
 }
 
 function calcSub() {
-    // let [num1, num2] = enterNumber();
+    let [num1, num2] = enterNumber();
 
     if (isNumValid(num1) && isNumValid(num2)) {
-        let result = +num1 - +num2;
-        document.getElementById('result').innerHTML = sub;
+        let result = Сalculator.sub(num1, num2);
+        document.getElementById('result').innerHTML = result;
     } else {
         alert("Only numbers");
     }
 }
 
 function calcMult() {
-    // let [num1, num2] = enterNumber();
+    let [num1, num2] = enterNumber();
 
     if (isNumValid(num1) && isNumValid(num2)) {
-        // let result = +num1 * +num2;
-        document.getElementById('result').innerHTML = multi;
+        let result = Сalculator.multi(num1, num2);
+        document.getElementById('result').innerHTML = result;
     } else {
         alert("Only numbers");
     }
@@ -64,10 +58,11 @@ function calcMult() {
 
 
 function calcDiv() {
-    // let [num1, num2] = enterNumber();
+    let [num1, num2] = enterNumber();
+
     if (isNumValid(num1) && isNumValid(num2)) {
-        // let result = +num1 / +num2;
-        document.getElementById('result').innerHTML = div;
+        let result = Сalculator.div(num1, num2);
+        document.getElementById('result').innerHTML = result;
     } else if (num2 == 0) {
         alert("На ноль делить нельзя!")
     } else {
