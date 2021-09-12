@@ -20,7 +20,7 @@ function sendMessage(author,comments) {
     let str = commentInput.value.replace(/(viagra|виагра|xxx)/gi, '***');
 
     let input = event.target;
-    document.getElementById("chat").innerHTML+=`<span class='author'>${author}:</span>${str}<br>`;
+    document.getElementById("chat").innerHTML+=`<span class='author'>${author}${avatarka}:</span>${str}<br>`;
 
 }
 
@@ -32,11 +32,11 @@ let comments=document.getElementById("comments").value;
 if(localStorage.getItem('name')==null){
     localStorage.setItem('name',author)
 }
-
+localStorage.setItem('photo', output.src);
 sendMessage(author,comments) 
 }
 
-//надо загрузить аватар 
+//загрузить аватар 
 let openFile = function(event) {
     let input = event.target;
 
@@ -46,6 +46,19 @@ let openFile = function(event) {
       let output = document.getElementById('output');
       output.src = dataURL;
     };
-    reader.readAsDataURL(input.files[0]);
+   reader.readAsDataURL(input.files[0]);
+  }; 
+let avatarka=document.getElementById('output');
+ 
+// ava.addEventListener('change',()=>{
+//     let reader=new FileReader();
+//     let files=ava.files[0];
 
-  };
+//     ava.parentElement.firstCgild.remove();
+//   reader.readAsDataURL(files);
+//   reader.onload=()=>{
+//       userImage.src=reader.result;
+//     }
+//   }
+// )
+// localStorage.setItem('photo',userImage.src)
