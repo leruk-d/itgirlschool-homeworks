@@ -50,33 +50,33 @@
         </fieldset>
         <hr>
         <div>Порода питомца<br>
-            <select id="breed">
-                <option value="1">Британская короткошерстная</option>
-                <option value="2">Сиамская</option>
-                <option value="3">Сибирская</option>
-                <option value="4">Русская голубая</option>
-                <option value="5">Минскин</option>
-                <option value="6">Бамбино</option>
-                <option value="7">Голландский рекс</option>
-                <option value="8">Американский бобтейл</option>
-                <option value="9">Шартрез</option>
+            <select class="breed" id="breed">
+                <option class="breed" value="Британская короткошерстная">Британская короткошерстная</option>
+                <option class="breed" value="Сиамская">Сиамская</option>
+                <option class="breed" value="Сибирская">Сибирская</option>
+                <option class="breed" value="Русская голубая">Русская голубая</option>
+                <option class="breed" value="Минскин">Минскин</option>
+                <option class="breed" value="Бамбино">Бамбино</option>
+                <option class="breed" value="Голландский рекс">Голландский рекс</option>
+                <option class="breed" value="Американский бобтейл">Американский бобтейл</option>
+                <option class="breed" value="Шартрез">Шартрез</option>
             </select>
         </div>
         <hr>
-        <div id="pet">
+        <div id="feed">
             Чем питается:<br />
-            <input type="checkbox" class="pet" name="feed" value="1" />
+            <input type="checkbox" class="feed" name="feed" value=" Сухой корм " />
             Сухой корм <br />
-            <input type="checkbox" class="pet" name="feed" value="2" />
+            <input type="checkbox" class="feed" name="feed" value="Влажный корм" />
             Влажный корм <br />
-            <input type="checkbox" class="pet" name="feed" value="3" />
+            <input type="checkbox" class="feed" name="feed" value=" Натуральный корм" />
             Натуральный корм
         </div>
         <hr>
-        <div >
+        <div>
             Укажите пол кота <br />
-            Женский<input type="radio" name="sex" /> <br /> Мужской
-            <input type="radio" name="sex" />
+            Женский <input type="radio" class="sex" name="sex" value="Женский" /> <br />
+            Мужской <input type="radio" class="sex" name="sex" value="Мужской" />
         </div>
         <div>
 
@@ -87,8 +87,9 @@
             <img src="https://www.bosch-club.ru/upload/iblock/69b/69b90870549ed4870652fdb40993a1b6.jpg" alt="the cat">
         </div>
         <div>
-            <button id="button" >Сохранить</button>
+            <button type="button" id="button" onclick=" newCat() ">Сохранить</button>
         </div>
+        <script src="script.js"></script>
     </form>
 </body>
 
