@@ -1,155 +1,67 @@
 
-let errors = [];
+function check() {
+    // собираем данные из полей ввода и записываем в переменные
+    let password = document.getElementById("password");
+    let email = document.getElementById("email");
+    let phone = document.getElementById("number");
+    let name = document.getElementById("username");
+    let login = document.getElementById("login");
 
 
-let passwordField = document.getElementById("password");
-let emailField = document.getElementById("email");
-let telField = document.getElementById("number");
-let nameField = document.getElementById("username");
-let loginField = document.getElementById("login");
+    document.getElementById('errorMessage').innerHTML = "";
 
-
-function ValidateUsername(nameField) {
-   let nameFormat = /^[А-ЯЁ][а-яё]*(\s[А-ЯЁ][а-яё]*)?$/;
-
- if  (nameField.value.match(nameFormat)) {
-        username.style.border = '1px solid green';
-        return true;
-       
-    } else {
-        errors.push("Ваше имя введено неверно!");
-        username.style.border = '1px solid red';
-        return false;
+    if (email.value == '') {
+        document.getElementById("errorMessage").innerHTML += "Ваш емейл не заполнен<br>"
+    } else if (!validateEmail(email.value)) {
+        document.getElementById("errorMessage").innerHTML += "Ваш емейл заполнен не верно<br>"
     }
+    function validateEmail(email) {
+        let regexEmail =  /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        return regexEmail.test(email);
+    }
+
+
+    if (phone.value == '') {
+        document.getElementById("errorMessage").innerHTML += "Ваш телефон не заполнен<br>"
+    } else if (!validatePhone(phone.value)) {
+        document.getElementById("errorMessage").innerHTML += "Ваш телефон заполнен не верно<br>"
+    }
+    function validatePhone(phone) {
+        let regexPhone = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+        return regexPhone.test(phone);
+    }        
+
+
+    if (password.value == '') {
+        document.getElementById("errorMessage").innerHTML += "Ваш пароль не заполнен<br>"
+    } else if (!ValidatePassword(password.value)) {
+        document.getElementById("errorMessage").innerHTML += "Ваш пароль заполнен не верно<br>"
+    }
+    function ValidatePassword (password) {
+        let regexPassword = /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
+        return regexPassword.test(password);
+    }   
+
+
+    if (login.value == '') {
+        document.getElementById("errorMessage").innerHTML += "Ваш логин не заполнен<br>"
+    } else if (!ValidateLogin(login.value)) {
+        document.getElementById("errorMessage").innerHTML += "Ваш логин заполнен не верно<br>"
+    }
+    function ValidateLogin (login) {
+        let regexLogin= /^[a-z0-9_-]{3,16}$/i;
+        return regexLogin.test(login);
+    }   
+
+
+    if (name.value == '') {
+        document.getElementById("errorMessage").innerHTML += "Ваше имя не заполнено<br>"
+    } else if (!ValidateName(name.value)) {
+        document.getElementById("errorMessage").innerHTML += "Ваше имя заполнено не верно<br>"
+    }
+    function ValidateName (name) {
+        let regexLogin= /^[А-ЯЁ][а-яё]*(\s[А-ЯЁ][а-яё]*)?$/;
+        return regexLogin.test(name);
+    }  
 
 }
-let userName=nameField.value;
-console.log(userName)
-
-function ValidatePassword(passwordField) {
-    let passwordFormat = /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
-
- if (passwordField.value.match(passwordFormat)) {
-     password.style.border = '1px solid green';
-        return true;
-    } else {
-        errors.push("Ваше пароль введен неверно!");
-        password.style.border = '1px solid red';
-        return false;
-
-    }
-}
-let password=passwordField.value;
-console.log(password)
-
-function ValidateLogin(loginField) {
-    let loginFormat = /^[a-z0-9_-]{3,16}$/i;
-   
-  if (loginField.value.match(loginFormat)) 
-     {
-        login.style.border = '1px solid green';
-         return true;
-     } else {
-         errors.push("Ваш адрес электронной почты введен неверно!");
-         login.style.border = '1px solid red';
-         return false;
-     }
- }
- let login=loginField.value;
- console.log(login)
-
-function ValidateEmail(emailField) {
-   let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-  
- if (emailField.value.match(mailFormat)) 
-    {
-        email.style.border = '1px solid green';
-        return true;
-    } else {
-        errors.push("Ваш адрес электронной почты введен неверно!");
-        email.style.border = '1px solid red';
-        return false;
-    }
-}
-let email=emailField.value;
-console.log(email)
-
-function ValidateTel(telField) {
-    let telFormat = /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
-
-    if (telField.value.match(telFormat)) {
-        number.style.border = '1px solid green';
-        return true;
-    } 
-    else {
-        errors.push("Ваш номер телефона введен неверно!");
-        number.style.border = '1px solid red';
-        return false;
-    }
-}
-let phone=telField.value;
-console.log(phone)
-
-// let errors = [];
-// console.log(errors );
-
-function checkValidity(input){
-
-    let validity = input.validity;
-    if (validity.valueMissing) {
-        errors.push('Поле'+' '+ input.placeholder +' '+ 'не заполнено');
-       input.style.border = '1px solid red';
-    }
-  
-}
-
-function checkAll(){
-   
-        errors=[];
-        console.log(errors );
-
-       
-        ValidateUsername(nameField)
-        ValidateTel(telField)
-        ValidateLogin(loginField)
-    ValidatePassword(passwordField)
-    ValidateEmail(emailField)
-    
-        let inputs=document.querySelectorAll("input");
-        for(let input of inputs){
-            checkValidity(input);
-        }
-        document.getElementById('errorMessage').innerHTML=errors.join('.<br>');
-      
-    }
-
-
-// let errors = [];
-// console.log(errors );
-
-// function checkValidity(input){
-
-    // if (validity.patternMismatch) {
-    //     errors.push('Неверный формат заполнения'+' '+ input.placeholder );
-    // }
-
-    // if (validity.rangeOverflow) {
-    //     let max =getAttributeValue(input, 'max');
-    //     errors.push('Максимальное значение не может быть больше чем ' + max);
-    // }
-
-    // if (validity.rangeUnderflow) {
-    //     let min = getAttributeValue(input, 'min');
-    //     errors.push('Минимальное значение не может быть меньше чем ' + min);
-    // }
-// }
-
-
-
-// function check() {
-//     checkAll();
-//  ValidateUsername(nameField);
-// ValidatePassword(passwordField);
-//   ValidateEmail(emailField);
-//   ValidateTel(telField);
-// }
