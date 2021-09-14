@@ -43,4 +43,3 @@ console.log(cat1);
      return radioSex[i].value;
  }
 
-// Создает объект cat1, но без свойств?!
