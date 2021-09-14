@@ -1,5 +1,5 @@
  class Cat {
-     construktor(petName, name, tel, petBreed, feed, sexCat) {
+    constructor(petName, name, tel, petBreed, feed, sexCat) {
          this.petName = petName;
          this.name = name;
          this.tel = tel;
