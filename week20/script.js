@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function Save(){
-    let number=getElementById("rating").value;
-
+    let number=getElementById("rating");
+ 
     localStorage.setItem('rating', number);
 }
-// разберись с отправкой в локал
+// разберись с отправкой в локал!!!
