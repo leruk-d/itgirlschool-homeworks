@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding: 0.3em 0.6em;
+            border: 3px solid transparent;
+            border-image: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+            border-image-slice: 1;
+        }
+
+        input {
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            height: 24px;
+            color: #aaa9a9;
+            font-size: 13px;
+        }
+
+        button {
+            border: 1px solid #cccccc;
+            background-color: rgb(240, 221, 57);
+            color: rgb(22, 185, 22);
+            width: 80px;
+            height: 29px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Поиск GIF</h1>
-    <div> 
+    <div>
         <lebel for="search"></lebel>
-        <input type="text" id="search" placeholder="Что Вы хотите найти?"> 
-        <button id="button" onclick="onSearch()">Найти!</button>
+        <input type="text" id="search" placeholder="Что Вы хотите найти?">
+        <button id="button" onclick="search()">Найти!</button>
     </div>
-   <div class="container" id="container"></div>
+    <div class="container" id="container"></div>
 
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
