@@ -96,10 +96,7 @@
             let formElem = document.getElementById("formElem");
             fetch("https://httpbin.org/post", {
                     method: 'POST',
-                    body: new FormData(formElem),
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-                    },
+                    body: new FormData(formElem)
                 })
                 .then(response => response.json())
                 .then(cat => {
