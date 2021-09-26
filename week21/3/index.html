@@ -35,48 +35,49 @@
     <form id="formElem">
         <div>
             <label for="name">Кличка питомца</label>
-            <input type="text" id="name" required />*
+            <input type="text" id="name" name="nameCat" required />*
         </div>
         <fieldset>
             <legend>Данные владельца</legend>
             <div>
                 <label for="name1"></label>
-                <input type="text" id="name1" placeholder="Имя" required />*
+                <input type="text" id="name1" placeholder="Имя" name="name" required />*
             </div>
             <label for="phone"></label>
-            <input type="tel" id="phone" placeholder="Номер тел."
+            <input type="tel" id="phone" name="tel" placeholder="Номер тел."
                 pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/" minlength="10"
                 maxlength="20" />
         </fieldset>
         <hr>
         <div>Порода питомца<br>
-            <select>
-                <option value="1">Британская короткошерстная</option>
-                <option value="2">Сиамская</option>
-                <option value="3">Сибирская</option>
-                <option value="4">Русская голубая</option>
-                <option value="5">Минскин</option>
-                <option value="6">Бамбино</option>
-                <option value="7">Голландский рекс</option>
-                <option value="8">Американский бобтейл</option>
-                <option value="9">Шартрез</option>
+            <select name="petBreed">
+                <option>Британская короткошерстная</option>
+                <option>Сиамская</option>
+                <option>Сибирская</option>
+                <option>Русская голубая</option>
+                <option>Минскин</option>
+                <option>Бамбино</option>
+                <option>Голландский рекс</option>
+                <option>Американский бобтейл</option>
+                <option>Шартрез</option>
             </select>
         </div>
         <hr>
         <div>
             Чем питается:<br />
-            <input type="checkbox" name="feed" value="1" />
+            <input type="checkbox" name="feed" value="Сухой корм" />
             Сухой корм <br />
-            <input type="checkbox" name="feed" value="2" />
+            <input type="checkbox" name="feed" value="Влажный корм" />
             Влажный корм <br />
-            <input type="checkbox" name="feed" value="3" />
+            <input type="checkbox" name="feed" value="Натуральный корм" />
             Натуральный корм
         </div>
         <hr>
         <div>
             Укажите пол кота <br />
-            Женский<input type="radio" name="sex" /> <br /> Мужской
-            <input type="radio" name="sex" />
+            Женский<input type="radio" name="sex" value="Женский" />
+            <br /> Мужской
+            <input type="radio" name="sex" value="Мужской" />
         </div>
         <div>
 
