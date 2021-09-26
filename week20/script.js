@@ -103,6 +103,7 @@ let json = `[{
 console.log(json);
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
     let heroes = JSON.parse(json);
     console.log(heroes);
     let heroesContent = "";
@@ -117,17 +118,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <img class="img" alt="picture" src='${hero.picture}'>
     <div>Подробнее: ${hero.moreDetails}</div>
     <br>
-    <label for="rating">Оцените героя от 1 до 5</label>
-    <input type="text" id="rating" name="rating" >
-    <button id=btn oncklik="Save()">Оценить</button>
-    </div>`
+    <div>Оцените героя</div>
+    <select name="grade" id="rating" onclick="Save()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+        </div>
+    `
     }
     document.getElementById("heroesContainer").innerHTML = heroesContent;
-});
+}
+)
 
 function Save(){
-    let number=getElementById("rating");
- 
-    localStorage.setItem('rating', number);
+    let heroes = JSON.parse(json);
+    for (let hero of heroes){
+        let select =document.querySelector('select').value;
+        if (localStorage.getItem('select')===null){
+            localStorage.setItem(`${hero.name}`, JSON.stringify(select));
+        }
+    }
+    
 }
-// разберись с отправкой в локал!!!
+
