@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <div>Подробнее: ${hero.moreDetails}</div>
     <br>
     <div>Оцените героя</div>
-    <select name="grade" id="rating" onclick="Save()">
+    <select name="grade" id="${hero.name}">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -138,11 +138,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function Save(){
     let heroes = JSON.parse(json);
-    for (let i=0; i < 10; i++){
-        let select =document.querySelector('select').value;
-        if (localStorage.getItem('select')===null){
-            localStorage.setItem(`${hero[i].name}`, JSON.stringify(select));
+    let select =document.querySelectorAll('select');
+    console.log(select);
+        for(i=0; i<heroes.length; i++){
+          let selectHero= select[i].value;
+          console.log(selectHero);
+                localStorage.setItem(`${i}`, JSON.stringify(selectHero));
+        
         }
-    }
-    
 }
+
+
