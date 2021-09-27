@@ -102,6 +102,8 @@ let json = `[{
 }]`;
 console.log(json);
 
+
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
     let heroes = JSON.parse(json);
@@ -126,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
+    <button onclick='Save()'>Отправить оценку</button>
         </div>
     `
     }
@@ -135,12 +138,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function Save(){
     let heroes = JSON.parse(json);
-    for (let hero of heroes){
+    for (let i=0; i < 10; i++){
         let select =document.querySelector('select').value;
         if (localStorage.getItem('select')===null){
-            localStorage.setItem(`${hero.name}`, JSON.stringify(select));
+            localStorage.setItem(`${hero[i].name}`, JSON.stringify(select));
         }
     }
     
 }
-
