@@ -159,7 +159,7 @@ function Save(){
         for(i=0; i<heroes.length; i++){
           let selectHero= select[i].value;
           console.log(selectHero);
-                localStorage.setItem(heroes[i].name, JSON.stringify(selectHero));
+                localStorage.setItem(heroes[i].name, selectHero);
         };
       
       
