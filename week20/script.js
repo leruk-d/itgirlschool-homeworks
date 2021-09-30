@@ -115,7 +115,13 @@ console.log(json);
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
+    let heroesJSON = JSON.parse(json);
+    getFromLocalStorage();
+    showHeroes() 
+})
 
+
+ function showHeroes() {
     let heroes = JSON.parse(json);
     console.log(heroes);
     let heroesContent = "";
@@ -144,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     document.getElementById("heroesContainer").innerHTML = heroesContent;
 }
-)
+
 
 function Save(){
     let heroes = JSON.parse(json);
@@ -154,7 +160,17 @@ function Save(){
           let selectHero= select[i].value;
           console.log(selectHero);
                 localStorage.setItem(heroes[i].name, JSON.stringify(selectHero));
-        
-        }
+        };
+      
+        showHeroes();
 }
 
+function getFromLocalStorage() {
+    let heroes = JSON.parse(json);
+    let select =document.querySelectorAll('select');
+        for(i=0; i<heroes.length; i++){
+    if (localStorage.getItem(heroes[i].name) != null){
+        select= JSON.parse(localStorage.getItem(heroes[i].name));
+    }}
+}
+ 
