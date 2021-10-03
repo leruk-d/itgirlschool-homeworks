@@ -7,6 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            border-radius: 5%;
+            font-family: 'Oswald', sans-serif;
+            width: 450px;
+            height: 800px;
+            padding: 20px;
+            box-shadow: 2px 2px 5px #e9ebd0
+        }
+
+        form {
+
+            position: relative;
+        }
+
         input:required:valid {
             border-color: green;
         }
@@ -15,13 +33,12 @@
             border-color: green;
         }
 
-        body {
-            background-color: rgb(248, 248, 248);
-        }
-
         img {
-            width: 40ex;
-            height: 40ex;
+            margin: 2% auto 0;
+            width: 30ex;
+            height: 30ex;
+            border-radius: 5%;
+
         }
 
         .comment {
@@ -31,6 +48,7 @@
 </head>
 
 <body>
+
     <h1>Опросник</h1>
     <form>
         <div>
@@ -74,17 +92,18 @@
         </div>
         <hr>
         <div>
-            Укажите пол кота <br />
+            Укажите пол кота: <br />
             Женский <input type="radio" class="sex" name="sex" value="Женский" /> <br />
             Мужской <input type="radio" class="sex" name="sex" value="Мужской" />
+        </div>
+
+        <div>
+            <img src="https://www.bosch-club.ru/upload/iblock/69b/69b90870549ed4870652fdb40993a1b6.jpg" alt="the cat">
         </div>
         <div>
 
             <textarea id="comment" name="comments" rows="5" cols="37" placeholder="Ваш комментарий"
                 required></textarea>*
-        </div>
-        <div>
-            <img src="https://www.bosch-club.ru/upload/iblock/69b/69b90870549ed4870652fdb40993a1b6.jpg" alt="the cat">
         </div>
         <div>
             <button type="button" id="button" onclick=" newCat() ">Сохранить</button>
