@@ -18899,7 +18899,7 @@ const Chart = require ('chart.js');
 const moment = require ('moment');
 
 
-let date=moment().format('dddd');
+let date=moment().subtract(6, 'days').calendar();
 console.log(date);
 
 var ctx = document.getElementById('myChart');
