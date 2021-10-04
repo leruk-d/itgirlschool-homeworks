@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,33 +49,35 @@
         <button id="button " onclick="search()">Найти!</button>
     </div>
     <div class="container" id="container"></div>
- 
+
     <script>
+        async function search() {
+            let searchValue = document.getElementById("search").value;
+            let api_key = "2crkCOKP6fb7R7sRcFkAwG82ushIijkU";
+            document.getElementById("container").innerHTML = "";
+            try {
+                let response = await fetch(
+                    `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${searchValue}&limit=5&offset=0&rating=g&lang=en`
+                );
+                let result = await response.json();
+                if (result.meta.status !== 200) {
+                    throw new Error('Сервер не доступен')
+                }
 
-async function search(){
-    let searchValue=document.getElementById("search").value;
-    let api_key="2crkCOKP6fb7R7sRcFkAwG82ushIijkU";
-    document.getElementById("container").innerHTML = "";
-
-    let response=await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${searchValue}&limit=5&offset=0&rating=g&lang=en`);
-    let result= await response.json();
-    try {
-        if (result.meta.status !== 200) {
-            throw new Error('Сервер не доступен')
+            } catch (error) {
+                console.log(error.message)
+            }
+            getGif(result)
         }
 
-    } catch (error) {
-        console.log(error.message)
-    }
-    getGif (result)
-}
-function getGif (result) {
-        console.log(result);
-        for (let i = 0; i < result.data.length ; i++) {
-            let url = result.data[i].images.original.url;
-            document.getElementById("container").innerHTML += `<img src="${url}" alt="gif">`;
-        }}
-
+        function getGif(result) {
+            console.log(result);
+            for (let i = 0; i < result.data.length; i++) {
+                let url = result.data[i].images.original.url;
+                document.getElementById("container").innerHTML += `<img src="${url}" alt="gif">`;
+            }
+        }
     </script>
 </body>
+
 </html>
