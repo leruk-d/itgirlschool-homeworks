@@ -32,3 +32,11 @@ button {
 #out {
     margin: 10px;
 }
+
+input:valid {
+    border-color: rgb(208, 220, 235);
+}
+
+input:invalid {
+    border-color: rgb(112, 8, 90);
+}
