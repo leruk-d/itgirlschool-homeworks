@@ -4,8 +4,9 @@ h2 {
 }
 
 input {
-    width: 100%;
-    height: 8em;
+    width: 99%;
+    height: 2em;
+    padding: 10px;
 }
 
 #btn {

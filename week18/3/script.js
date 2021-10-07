@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         let newComment = JSON.parse(localStorage.getItem('comment'));
         if (newComment != null) {
-            comment .value = newComment;
+            document.getElementById("comments").value= newComment;
         }
     })
 
