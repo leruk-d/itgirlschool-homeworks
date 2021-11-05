@@ -110,7 +110,7 @@ function App() {
 
     {
     heroes.map((hero) =>
-      <Hero name={hero.name} universe={hero.universe} alterEgo={hero.alterEgo} activity={hero.activity} friends={hero.friends} powers={hero.powers} imgLink={hero.picture} moreDetails={hero.moreDetails}/>
+      <Hero key={hero.key} name={hero.name} universe={hero.universe} alterEgo={hero.alterEgo} activity={hero.activity} friends={hero.friends} powers={hero.powers} imgLink={hero.picture} moreDetails={hero.moreDetails}/>
     )
     }
     </div>
