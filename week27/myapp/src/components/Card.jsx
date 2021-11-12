@@ -1,18 +1,10 @@
 import React from 'react';
 import './Card.css';
-import classnames from "classnames";
 
-function Card({ props, isSelected }) {
-    const className = classnames("card", {
-        selected: isSelected,
-        unlimited300: props === 300,
-        unlimited450: props === 450,
-        unlimited550: props === 550,
-        unlimited1000: props === 1000
-    });
+function Card(props) {
     return (
-        <div className={className}>
-            <div className='Card-header'>Безлимитный {props.rate}</div>
+        <div className={`card ${isSelected ? 'selected' : ''}`}>
+            <div className='card-header'>Безлимитный {props.rate}</div>
             <div className='card-body'>
                 <div className='card-price'>
                     <div className='card-text1'>руб</div>
