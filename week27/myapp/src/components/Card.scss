@@ -1,0 +1,114 @@
+$fontColor: #ffffff;
+$fontSizeSF: 13px;
+$haightPrice: 130px;
+
+@mixin position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin header{
+    border: 1px solid rgb(255, 253, 253);
+    height: 40px;
+    color: $fontColor;
+    font-weight: bold;
+}
+
+
+.card {
+    width: 180px;
+    height: 270px;
+    background-color: rgb(241, 239, 239);
+    margin: 2px;
+
+
+    &-header {
+
+        &300 {
+        @include header;
+        padding: 3px;
+        @include position; 
+        background-color: #6695b5; 
+        }
+        &450 {
+            @include header;
+            padding: 3px;
+            @include position; 
+            background-color: #6ec392;
+            }
+            &500 {
+                @include header;
+                height: 50px;
+                padding: 3px;
+                @include position; 
+                background-color: #c98270;
+                }
+            &1000 {
+                @include header;
+                    padding: 3px;
+                    @include position; 
+                    background-color: #05080a;
+                    }
+    }
+ &-body{
+     display:grid;
+ }
+    &-price {
+        &300 {
+            height: $haightPrice;
+            color: $fontColor;
+            @include position;
+            background-color: #83c2ec;
+        }
+
+        &450 {
+            height: $haightPrice;
+            color: $fontColor;
+            @include position;
+            background-color: #83ecaf;
+        }
+
+        &500 {
+            height: $haightPrice;
+            color: $fontColor;
+            @include position;
+            background-color: #ec9883;
+        }
+
+        &1000 {
+            height: $haightPrice;
+            color: $fontColor;
+            @include position;
+            background-color: #1e2d38;
+        }
+    }
+
+    &-value {
+        font-size: 40px;
+        font-weight: bolder;
+    }
+
+
+    &-speed {
+        height: 40px;
+        font-size: $fontSizeSF;
+        @include position;
+    }
+
+    &-footer {
+        background-color: rgb(211, 209, 209);
+        height: 50px;
+        line-height: 1.5;
+        font-size: $fontSizeSF;
+        @include position;
+
+
+    }
+
+}
+
+.selected {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 275px;
+}
