@@ -1,0 +1,58 @@
+.Card {
+    width: 180px;
+    height: 270px;
+    background-color: rgb(241, 239, 239);
+    margin: 2px;
+
+}
+
+.Card-header {
+    border: 1px solid rgb(255, 253, 253);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.card-price {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.price-value {
+    font-size: 40px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text2 {}
+
+.card-speed {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.card-footer {
+    background-color: rgb(211, 209, 209);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.selected {
+    border: 2px solid orange;
+}
