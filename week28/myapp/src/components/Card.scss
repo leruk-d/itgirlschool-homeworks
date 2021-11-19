@@ -36,7 +36,6 @@ $haightPrice: 130px;
     }
     &500 {
       @include header;
-      height: 50px;
       padding: 3px;
       @include position;
       background-color: #c98270;

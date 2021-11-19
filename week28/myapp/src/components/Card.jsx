@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.scss";
 
 function Card(props) {
+  const [pressed, setPressed] = useState(false);
+  const handleChange = () => {
+    setPressed(!pressed);
+  };
   return (
-    <div className={`card ${props.isSelected ? "selected" : ""}`}>
+    <div className="card" onClick={handleChange}>
+      {!pressed ? (
+        ""
+      ) : (
+        <div
+          style={{
+            height: "20px",
+          }}
+        >
+          Вы выбрали тариф:
+        </div>
+      )}
       <div className={`card-header${props.price}`}>
         Безлимитный {props.price}
       </div>
