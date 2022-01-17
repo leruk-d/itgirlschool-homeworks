@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let heroesJSON = JSON.parse(json);
     showHeroes();
     getFromLocalStorage();
-})
+});
 
 
  function showHeroes() {
@@ -138,15 +138,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <br>
     <div>Оцените героя</div>
     <select name="grade" id="${hero.name}">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
     </select>
     <button onclick='Save()'>Отправить оценку</button>
         </div>
-    `
+    `;
     }
     document.getElementById("heroesContainer").innerHTML = heroesContent;
 }
@@ -156,13 +156,11 @@ function Save(){
     let heroes = JSON.parse(json);
     let select =document.querySelectorAll('select');
     console.log(select);
-        for(i=0; i<heroes.length; i++){
-          let selectHero= select[i].value;
-          console.log(selectHero);
+        for( i=0; i<heroes.length; i++){
+        let selectHero= select[i].value;
+        console.log(selectHero);
                 localStorage.setItem(heroes[i].name, selectHero);
-        };
-      
-      
+        }
 }
 
 function getFromLocalStorage() {
@@ -173,4 +171,3 @@ function getFromLocalStorage() {
         select[i].value= JSON.parse(localStorage.getItem(heroes[i].name));
     }}
 }
- 
